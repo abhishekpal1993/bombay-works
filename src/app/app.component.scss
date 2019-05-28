@@ -1,0 +1,79 @@
+@import "../styles/theme";
+@import "../styles/_defaults.scss";
+
+.author {
+  color: red;
+}
+
+$dark-p: mat-palette($mat-blue-grey, 500);
+$dark-a: mat-palette($mat-blue-grey, 900);
+$dark-t: mat-dark-theme($dark-p, $dark-a);
+$footer-palette: map-get($dark-t, foreground);
+
+.footer {
+  padding: 15px;
+  background-color: mat-color($dark-p, default);
+  color: mat-color($footer-palette, text);
+}
+
+.router-outlet {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item {
+  margin: 10px;
+}
+
+.menu-close {
+  display: none !important;
+  @media (max-width: 320px) {
+    display: block !important;
+  }
+}
+
+.main-sidenav {
+  padding: 20px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu {
+  margin: 0 20px 10px 0;
+  color: grey;
+  display: none !important;
+  @media (min-width: 320px) {
+    display: block !important;
+  }
+}
+
+.branding {
+  @include custom-text-default();
+  padding-top: 4px;
+  &.center {
+    text-align: center;
+  }
+  img {
+    position: relative;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+  }
+}
+
+$primary: mat-palette($mat-blue-grey, 300);
+$accent: mat-palette($mat-blue-grey);
+$theme: mat-light-theme($primary, $accent);
+$toolbar-palette: map-get($theme, foreground);
+
+.toolbar {
+  background-color: mat-color($primary, default);
+  color: mat-color($toolbar-palette, text);
+}

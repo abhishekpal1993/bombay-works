@@ -1,0 +1,33 @@
+@import "../../styles/_defaults.scss";
+
+.container {
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    display: flex;
+    justify-content: flex-start;
+  }
+  width: 100vw;
+  border: 2px solid;
+  border-radius: 25px;
+}
+
+.calculator {
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    width: calc(100% - 120px);
+  }
+  width: auto;
+  border: 2px solid;
+  border-radius: 25px;
+  margin: 10px;
+}
+.banner {
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    display: inline;
+  }
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    display: none;
+  }
+  min-width: 120px !important;
+  height: 370px !important;
+  border-radius: 15px;
+  margin: 10px;
+}

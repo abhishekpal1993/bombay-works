@@ -1,0 +1,13 @@
+// chunk
+$chunk-woff-font-path: "./fonts/chunk/ChunkFive-Regular.woff";
+$chunk-woff2-font-path: "./fonts/chunk/ChunkFive-Regular.woff2";
+$chunk-eot-font-path: "./fonts/ChunkFive-Regular.eot";
+
+@font-face {
+    font-family: 'Chunk';
+    src:url($chunk-woff2-font-path) format('woff2'),
+        url($chunk-woff-font-path) format('woff'),
+        url($chunk-woff-font-path) format('eot');
+    font-weight: normal;
+    font-style: normal;
+}

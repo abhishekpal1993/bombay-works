@@ -1,0 +1,34 @@
+<!-- top menu -->
+<div class="toolbar">
+  <mat-toolbar color="primary">
+    <!-- toolbar options on mobile view/slight squeeze -->
+    <span class="d-md-none" [matTooltip]="'Tasks'" matTooltipPosition="before">
+      <mat-select [(value)]="currentTask" (selectionChange)="currentTask = $event.value">
+        <mat-option *ngFor="let item of tasks" [value]="item.link">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </span>
+    <!-- toolbar title on mobile view -->
+    <span class="branding spacer center d-inline d-sm-none">
+      {{ title }}
+    </span>
+    <!-- toolbar title on slight squeeze -->
+    <span class="branding spacer center d-none d-sm-inline d-md-none">
+      {{ title }}
+    </span>
+    <!-- toolbar title on normal view-->
+    <span class="branding spacer d-none d-md-inline">
+      {{ title }}
+    </span>
+    <span class="d-none d-md-inline">
+      <button mat-stroked-button class="nav-button" *ngFor="let item of tasks" (click)="currentTask = item.link">
+        {{item.name}}
+      </button>
+    </span>
+  </mat-toolbar>
+</div>
+<div class="pdf-container">
+  <pdf-viewer [src]="currentTask" [original-size]="false" [autoresize]="true" [fit-to-page]="true" style="display: block;">
+  </pdf-viewer>
+</div>

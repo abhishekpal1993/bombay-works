@@ -8,7 +8,7 @@ import { MatIconRegistry } from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Bombay Works';
+  title = 'BombayWorks';
   logo = '../assets/images/logo.png';
   year = new Date().getFullYear();
 

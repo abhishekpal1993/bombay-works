@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AreaCalcComponent } from './area-calc.component';
+import { CoreModule } from '@bw/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AreaCalcComponent', () => {
   let component: AreaCalcComponent;
@@ -8,6 +10,10 @@ describe('AreaCalcComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CoreModule,
+        BrowserAnimationsModule
+      ],
       declarations: [ AreaCalcComponent ]
     })
     .compileComponents();

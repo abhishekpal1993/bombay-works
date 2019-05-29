@@ -1,9 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CoreModule } from '@bw/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CoreModule,
+        RouterTestingModule,
+        BrowserAnimationsModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -19,13 +27,6 @@ describe('AppComponent', () => {
   it(`should have as title 'bombayworks'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('bombayworks');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to bombayworks!');
+    expect(app.title).toEqual('Bombay Works');
   });
 });

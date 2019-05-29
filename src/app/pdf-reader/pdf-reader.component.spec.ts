@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PdfReaderComponent } from './pdf-reader.component';
+import { CoreModule } from '@bw/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PdfReaderComponent', () => {
   let component: PdfReaderComponent;
@@ -8,6 +10,10 @@ describe('PdfReaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CoreModule,
+        BrowserAnimationsModule
+      ],
       declarations: [ PdfReaderComponent ]
     })
     .compileComponents();

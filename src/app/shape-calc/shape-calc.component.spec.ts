@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShapeCalcComponent } from './shape-calc.component';
+import { CoreModule } from '@bw/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AreaCalcComponent } from '../area-calc/area-calc.component';
 
 describe('ShapeCalcComponent', () => {
   let component: ShapeCalcComponent;
@@ -8,7 +11,11 @@ describe('ShapeCalcComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShapeCalcComponent ]
+      imports: [
+        CoreModule,
+        BrowserAnimationsModule
+      ],
+      declarations: [ ShapeCalcComponent, AreaCalcComponent ]
     })
     .compileComponents();
   }));

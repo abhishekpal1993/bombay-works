@@ -1,17 +1,18 @@
 @import "../../styles/_defaults.scss";
 
 .container {
-  @media (min-width: map-get($grid-breakpoints, sm)) {
+  @media (min-width: 400px) {
     display: flex;
     justify-content: flex-start;
   }
+  margin-top: 10px;
   width: 100vw;
   border: 2px solid;
   border-radius: 25px;
 }
 
 .calculator {
-  @media (min-width: map-get($grid-breakpoints, sm)) {
+  @media (min-width: 400px) {
     width: calc(100% - 120px);
   }
   width: auto;
@@ -20,14 +21,14 @@
   margin: 10px;
 }
 .banner {
-  @media (min-width: map-get($grid-breakpoints, sm)) {
-    display: inline;
+  @media (min-width: 400px) {
+    min-width: 120px;
   }
-  @media (max-width: map-get($grid-breakpoints, sm)) {
-    display: none;
+  @media (max-width: 400px) {
+    width: calc(100% - 20px);
+    height: auto;
   }
-  min-width: 120px !important;
-  height: 370px !important;
+  height: 370px;
   border-radius: 15px;
   margin: 10px;
 }

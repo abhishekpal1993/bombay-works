@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'bw-shape-calc',
@@ -7,12 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShapeCalcComponent implements OnInit {
 
-  bannerImg: String = '../assets/images/banner.png';
+  bannerImg: String;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (window.innerWidth >= 400) {
+      this.bannerImg = '../assets/images/banner.png';
+    } else {
+      this.bannerImg = '../assets/images/banner.1.png';
+    }
+  }
 
   constructor() { }
 
   ngOnInit() {
-    console.log('Hi');
+    if (window.innerWidth >= 400) {
+      this.bannerImg = '../assets/images/banner.png';
+    } else {
+      this.bannerImg = '../assets/images/banner.1.png';
+    }
   }
 
 }

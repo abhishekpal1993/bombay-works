@@ -11,7 +11,7 @@ export class ShapeCalcComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    if (window.innerWidth >= 400) {
+    if (window.innerWidth >= 415) {
       this.bannerImg = '../assets/images/banner.png';
     } else {
       this.bannerImg = '../assets/images/banner.1.png';
@@ -21,7 +21,7 @@ export class ShapeCalcComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (window.innerWidth >= 400) {
+    if (window.innerWidth >= 415) {
       this.bannerImg = '../assets/images/banner.png';
     } else {
       this.bannerImg = '../assets/images/banner.1.png';

@@ -1,0 +1,96 @@
+<div class="area-container">
+  <div *ngIf="stepCalc === 1">
+    <label id="step-label" class="step-label">Select Your Shape</label>
+    <mat-radio-group aria-labelledby="step-label" class="column-layout" [(ngModel)]="shapeItem">
+      <mat-radio-button class="shape-button" *ngFor="let item of shapes" [value]="item.value">
+        {{item.label}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-raised-button class="shape-button" color="primary" (click)="evaluateShape()">Next</button>
+  </div>
+
+  <div *ngIf="stepCalc === 2" [ngSwitch]="shapeItem">
+    <span class="step-label">Insert your values</span>
+    <!-- rectangle -->
+    <form [formGroup]="rectangleForm" *ngSwitchCase="1">
+      <div class="column-layout">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="width" formControlName="width">
+          <mat-error *ngIf="!rectangleForm.get('width').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput placeholder="height" formControlName="height">
+          <mat-error *ngIf="!rectangleForm.get('height').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button type="button" mat-raised-button class="shape-button" color="primary"
+        (click)="rectangleArea()">Next</button>
+      <button type="reset" mat-raised-button class="shape-button" (click)="reinitializeValues()">Cancel</button>
+    </form>
+
+    <!-- circle -->
+    <form [formGroup]="circleForm" *ngSwitchCase="2">
+      <div class="column-layout">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="diameter" formControlName="diameter">
+          <mat-error *ngIf="!circleForm.get('diameter').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button type="button" mat-raised-button class="shape-button" color="primary" (click)="circleArea()">Next</button>
+      <button type="reset" mat-raised-button class="shape-button" (click)="reinitializeValues()">Cancel</button>
+    </form>
+
+    <!-- square -->
+    <form [formGroup]="squareForm" *ngSwitchCase="3">
+      <div class="column-layout">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="width" formControlName="width">
+          <mat-error *ngIf="!squareForm.get('width').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button type="button" mat-raised-button class="shape-button" color="primary" (click)="squareArea()">Next</button>
+      <button type="reset" mat-raised-button class="shape-button" (click)="reinitializeValues()">Cancel</button>
+    </form>
+
+    <!-- eclipse -->
+    <form [formGroup]="eclipseForm" *ngSwitchCase="4">
+      <div class="column-layout">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="width" formControlName="width">
+          <mat-error *ngIf="!eclipseForm.get('width').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput placeholder="height" formControlName="height">
+          <mat-error *ngIf="!eclipseForm.get('height').valid">
+            Please enter a valid number!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button type="button" mat-raised-button class="shape-button" color="primary" (click)="eclipseArea()">Next</button>
+      <button type="reset" mat-raised-button class="shape-button" (click)="reinitializeValues()">Cancel</button>
+    </form>
+
+  </div>
+
+  <div *ngIf="stepCalc === 3">
+    <div class="column-layout">
+      <span class="step-label">Your results</span>
+      <br>
+      <span>You have calculated the area of {{ getShape() }}.Below is your result:</span>
+      <span class="step-label step-label-result">The area is {{ total }}</span>
+    </div>
+    <button mat-raised-button class="shape-button shape-button-last" color="primary" (click)="reinitializeValues()">Start
+      Over</button>
+  </div>
+
+</div>

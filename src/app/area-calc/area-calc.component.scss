@@ -1,0 +1,21 @@
+.area-container {
+  margin: 25px;
+}
+
+.column-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.shape-button {
+  margin: 5px;
+}
+
+.shape-button-last, .step-label-result {
+  margin-top: 25px;
+}
+
+.step-label {
+  font: small-caps bold 24px/1 sans-serif;
+}

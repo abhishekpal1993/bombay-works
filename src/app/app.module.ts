@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShapeCalcComponent } from './shape-calc/shape-calc.component';
 import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
+import { AreaCalcComponent } from './area-calc/area-calc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShapeCalcComponent,
-    PdfReaderComponent
+    PdfReaderComponent,
+    AreaCalcComponent
   ],
   imports: [
     BrowserModule,

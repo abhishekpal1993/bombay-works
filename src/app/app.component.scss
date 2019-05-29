@@ -1,21 +1,16 @@
 @import "../styles/theme";
 @import "../styles/_defaults.scss";
 
-$dark-p: mat-palette($mat-blue-grey, 500);
-$dark-a: mat-palette($mat-blue-grey, 900);
-$dark-t: mat-dark-theme($dark-p, $dark-a);
-$footer-palette: map-get($dark-t, foreground);
-
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   padding: 15px;
-  background-color: mat-color($dark-p, default);
-  color: mat-color($footer-palette, text);
+  background-color: mat-color($mat-blue-grey, 900);
+  color: white;
   .author {
-    color: mat-color($footer-palette, text);
+    font-weight: bold;
   }
 }
 
@@ -50,11 +45,13 @@ $footer-palette: map-get($dark-t, foreground);
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    opacity: 0.11;
   }
 }
 
-.mat-list, .mat-nav-list, .mat-selection-list {
+.mat-list,
+.mat-nav-list,
+.mat-selection-list {
   padding-top: 0;
 }
 
@@ -80,33 +77,36 @@ $footer-palette: map-get($dark-t, foreground);
   img {
     position: relative;
     top: -2px;
-    width: 30px;
+    width: auto;
     height: 30px;
     margin: 0 10px 0 0;
   }
 }
 
-$primary: mat-palette($mat-blue-grey, 500);
-$accent: mat-palette($mat-amber, 100);
-$theme: mat-light-theme($primary, $accent);
-$toolbar-palette: map-get($theme, foreground);
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
 
 .toolbar {
-  background-color: mat-color($primary, default);
-  color: mat-color($toolbar-palette, text);
+  background-color: mat-color($mat-grey, 300);
 }
 
 .main-container {
   height: 100vh;
-}
-
-.main-container::before {
-  background-image: url("../assets/images/background.jpeg");
-  background-size: cover;
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
+  &::before {
+    background-image: url("../assets/images/background.jpeg");
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
 }

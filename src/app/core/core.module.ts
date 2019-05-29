@@ -17,6 +17,8 @@ import {
   MatTooltipModule,
   MatSelectModule,
   MatButtonModule,
+  MatRadioModule,
+  MatInputModule,
 } from '@angular/material';
 import { HttpClientModule } from "@angular/common/http";
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -37,6 +39,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatRadioModule,
+    MatInputModule,
     PdfViewerModule,
     HttpClientModule
   ],

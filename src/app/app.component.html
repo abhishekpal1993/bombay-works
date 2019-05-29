@@ -3,8 +3,7 @@
     <mat-nav-list>
       <mat-toolbar class="toolbar">
         <div class="branding">
-          <img [src]="logo" />
-          <span>{{ title }}</span>
+          <span>Menu</span>
         </div>
       </mat-toolbar>
       <a class="menu-item" mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
@@ -20,15 +19,15 @@
     <mat-icon class="menu" mat-button (click)="drawer.toggle()" svgIcon="menu"></mat-icon>
     <!-- toolbar title on mobile view -->
     <span class="branding spacer center d-inline d-sm-none">
-      <img [src]="logo" />
+      <a href="https://www.bombayworks.com/">{{ title }}</a>
     </span>
     <!-- toolbar title on slight squeeze -->
     <span class="branding spacer center d-none d-sm-inline d-md-none">
-      <img [src]="logo" /> {{ title }}
+      <a href="https://www.bombayworks.com/"><img [src]="logo" /> {{ title }}</a>
     </span>
     <!-- toolbar title on normal view-->
-    <span class="branding spacer d-none d-md-inline">
-      <img [src]="logo" /> {{ title }}
+    <span class="branding spacer center d-none d-md-inline">
+      <a href="https://www.bombayworks.com/"><img [src]="logo" /> {{ title }}</a>
     </span>
   </mat-toolbar>
   <div class="router-outlet">
@@ -38,11 +37,11 @@
     <div class="row d-none d-sm-inline">
       <div class="col-sm-12 links">
         &#169;
-        <span [matTooltip]="'Author'" matTooltipPosition="before" class="year">{{ year }} -&nbsp;</span>
+        <span>{{ year }} -&nbsp;</span>
         <br class="d-block d-sm-none">
       </div>
     </div>
-    <div class="row">
+    <div class="row" [matTooltip]="'Author LinkedIn'" matTooltipPosition="before" >
       <div class="col-12 signature">
         <a class="author" href="https://www.linkedin.com/in/abhishekpal1993/" target="_blank">
           Abhishek Pal
